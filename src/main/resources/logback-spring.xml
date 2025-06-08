@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <include resource="org/springframework/boot/logging/logback/base.xml" />
+    <include resource="org/springframework/boot/logging/logback/defaults.xml" />
+    <springProperty scope="context" name="appName" source="spring.application.name" />
+    <springProperty scope="context" name="serverPort" source="server.port" />
+    <shutdownHook class="ch.qos.logback.core.hook.DelayingShutdownHook" />
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <Pattern>%d{HH:mm:ss.SSS} %X{sessionId} [%thread] %-5level %logger{36} %M %L - %message%n</Pattern>
+            <charset>UTF-8</charset>
+        </encoder>
+    </appender>
+
+    <appender name="FILE-AUDIT" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>logs/account-access-consents-services.log</file>
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} %X{sessionId} [%thread] %-5level %logger{36} %M %L - %message%n</pattern>
+            <charset>UTF-8</charset>
+        </encoder>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>logs/account-access-consents-services-%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+            <timeBasedFileNamingAndTriggeringPolicy
+                class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+                <maxFileSize>100MB</maxFileSize>
+            </timeBasedFileNamingAndTriggeringPolicy>
+            <maxHistory>5</maxHistory>
+        </rollingPolicy>
+    </appender>
+    <logger name="com.p6spy.engine" level="DEBUG" additivity="false">
+        <appender-ref ref="FILE-AUDIT" />
+    </logger>
+    <logger name="org.apache.coyote" level="INFO" additivity="false">
+        <appender-ref ref="FILE-AUDIT" />
+    </logger>
+    <logger name="org.apache.catalina" level="INFO" additivity="false">
+        <appender-ref ref="FILE-AUDIT" />
+    </logger>
+    <logger name="org.springframework.session.web.http" level="INFO" additivity="false">
+        <appender-ref ref="FILE-AUDIT" />
+    </logger>
+    <logger name="com.zaxxer.hikari" level="INFO" additivity="false">
+        <appender-ref ref="FILE-AUDIT" />
+    </logger>
+    <logger name="p6spy" level="DEBUG" additivity="false">
+        <appender-ref ref="FILE-AUDIT" />
+    </logger>
+    <logger name="com.springframework" level="ERROR" additivity="false">
+        <appender-ref ref="FILE-AUDIT" />
+    </logger>
+    <logger name="org.springframework.amqp" level="ERROR" additivity="false">
+        <appender-ref ref="FILE-AUDIT" />
+    </logger>
+    <logger name="org.springframework.beans" level="ERROR" additivity="false">
+        <appender-ref ref="FILE-AUDIT" />
+    </logger>
+    <logger name="org.springframework.test" level="ERROR" additivity="false">
+        <appender-ref ref="FILE-AUDIT" />
+    </logger>
+    <logger name="com.netflix" level="ERROR" additivity="false">
+        <appender-ref ref="FILE-AUDIT" />
+    </logger>
+    <logger name="com.rabbitmq" level="ERROR" additivity="false">
+        <appender-ref ref="FILE-AUDIT" />
+    </logger>
+    <logger name="com.mchange" level="ERROR" additivity="false">
+        <appender-ref ref="FILE-AUDIT" />
+    </logger>
+    <logger name="net.sf.ehcache" level="ERROR" additivity="false">
+        <appender-ref ref="FILE-AUDIT" />
+    </logger>
+    <logger name="com.netflix.eureka" level="ERROR" additivity="false">
+        <appender-ref ref="FILE-AUDIT" />
+    </logger>
+    <logger name="com.netflix.discovery" level="ERROR" additivity="false">
+        <appender-ref ref="FILE-AUDIT" />
+    </logger>
+    <logger name="org.apache.skywalking" level="ERROR" additivity="false">
+        <appender-ref ref="FILE-AUDIT" />
+    </logger>
+    <logger name="io.grpc" level="ERROR" additivity="false">
+        <appender-ref ref="FILE-AUDIT" />
+    </logger>
+    <logger name="io.netty" level="ERROR" additivity="false">
+        <appender-ref ref="FILE-AUDIT" />
+    </logger>
+    <logger name="io.grpc.netty.shaded.io.grpc.netty.NettyClientHandler" level="INFO" />
+    <logger name="io.grpc.netty.shaded.io.grpc.netty.NettyServerHandler" level="INFO" />
+    <logger name="com.microservices.account.access.consents" level="DEBUG" additivity="false">
+        <appender-ref ref="FILE-AUDIT" />
+    </logger>
+    <root level="DEBUG">
+        <appender-ref ref="CONSOLE" />
+        <appender-ref ref="FILE-AUDIT" />
+    </root>
+</configuration>
