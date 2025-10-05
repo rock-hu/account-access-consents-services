@@ -175,7 +175,5 @@ paths:
           description: OK
 components:
   schemas:
-    OBReadConsent1:
-      type: object
-    OBReadConsentResponse1:
-      type: object
+    OBReadConsent1: {}
+    OBReadConsentResponse1: {}

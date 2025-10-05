@@ -8,7 +8,7 @@
     </parent>
     <groupId>com.openbanking.account.access.consents</groupId>
     <artifactId>account-access-consents-services</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
+    <version>1.0.0</version>
     <packaging>jar</packaging>
     <name>account-access-consents-services</name>
     <properties>
@@ -550,7 +550,8 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
                     <fork>false</fork>
-                    <mainClass>com.openbanking.account.access.consents.Application</mainClass>
+                    <jmxPort>9002</jmxPort>
+                    <jmxPort>9002</jmxPort>
                     <jvmArguments>-Dspring.application.admin.enabled=true
                         -Xms128m
                         -Xmx256m
