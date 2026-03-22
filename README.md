@@ -4,7 +4,7 @@
 [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Frock-hu%2Faccount-access-consents-services.svg?type=shield&issueType=license)](https://app.fossa.com/projects/git%2Bgithub.com%2Frock-hu%2Faccount-access-consents-services?ref=badge_shield&issueType=license)
 [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Frock-hu%2Faccount-access-consents-services.svg?type=shield&issueType=security)](https://app.fossa.com/projects/git%2Bgithub.com%2Frock-hu%2Faccount-access-consents-services?ref=badge_shield&issueType=security)
 
-
+![Open API](https://validator.swagger.io/validator?url=https://raw.githubusercontent.com/rock-hu/account-access-consents-services/refs/heads/master/docs/api-docs.yaml)
 
 📚 Getting Started
 

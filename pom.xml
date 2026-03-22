@@ -454,7 +454,7 @@
                     <version>1.4</version>
                     <configuration>
                         <apiDocsUrl>http://localhost:8080/v3/api-docs.yaml</apiDocsUrl>
-                        <outputFileName>${project.version}-api-docs.yaml</outputFileName>
+                        <outputFileName>api-docs.yaml</outputFileName>
                         <outputDir>${project.basedir}/docs</outputDir>
                         <skip>false</skip>
                     </configuration>
