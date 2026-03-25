@@ -23,10 +23,11 @@ management:
   server:
     port: 8080
   endpoints:
-    enabled-by-default: true
     web:
       exposure:
         include: '*'
+    access:
+      default: READ_ONLY
   endpoint:
     health:
       show-details: always
