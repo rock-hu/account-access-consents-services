@@ -1,0 +1,3 @@
+POST /account-access-consents
+DELETE /account-access-consents/{ConsentId}
+GET /account-access-consents/{ConsentId}

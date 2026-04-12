@@ -1,5 +1,6 @@
 package com.openbanking.account.access.consents.model;
 
+import java.io.Serial;
 import java.io.Serializable;
 import lombok.Getter;
 import lombok.Setter;
@@ -10,6 +11,7 @@ import lombok.Setter;
 @Getter
 @Setter
 public class OBReadConsent1Data implements Serializable {
+	@Serial
 	private static final long serialVersionUID = 1L;
 
 	/**
@@ -67,7 +69,7 @@ public class OBReadConsent1Data implements Serializable {
 
 		@Override
 		public String toString() {
-			return String.valueOf(value);
+			return value;
 		}
 
 		public static PermissionsEnum fromValue(String text) {

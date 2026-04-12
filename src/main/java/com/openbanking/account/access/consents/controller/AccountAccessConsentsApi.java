@@ -7,22 +7,23 @@ import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 
 @Tag(name = "account-access-consents", description = "account-access-consents")
-@RequestMapping(value = "")
+@RequestMapping("")
 public interface AccountAccessConsentsApi {
 
 	@Operation(summary = "Create Account Access Consents", operationId = "createAccountAccessConsents", description = "", tags = { "Account Access", })
-	@RequestMapping(
+	@PostMapping(
 			value = "/account-access-consents",
 			produces = { "application/json; charset=utf-8", "application/json", "application/jose+jwe" },
-			consumes = { "application/json; charset=utf-8", "application/json", "application/jose+jwe" },
-			method = RequestMethod.POST)
+			consumes = { "application/json; charset=utf-8", "application/json", "application/jose+jwe" })
 	default ResponseEntity<OBReadConsentResponse1> createAccountAccessConsents(@Parameter(name = "Default", required = true)
 	@RequestBody
 	OBReadConsent1 body, @Parameter(name = "An Authorisation Token as per https://tools.ietf.org/html/rfc6750", required = true)
@@ -42,10 +43,7 @@ public interface AccountAccessConsentsApi {
 
 	@Operation(summary = "Delete Account Access Consents", operationId = "deleteAccountAccessConsentsConsentId", description = "", tags = { "Account Access", })
 
-	@RequestMapping(
-			value = "/account-access-consents/{ConsentId}",
-			produces = { "application/json; charset=utf-8", "application/json", "application/jose+jwe" },
-			method = RequestMethod.DELETE)
+	@DeleteMapping(value = "/account-access-consents/{ConsentId}", produces = { "application/json; charset=utf-8", "application/json", "application/jose+jwe" })
 	default ResponseEntity<Void> deleteAccountAccessConsentsConsentId(@Parameter(name = "ConsentId", required = true)
 	@PathVariable("ConsentId")
 	String consentId, @Parameter(name = "An Authorisation Token as per https://tools.ietf.org/html/rfc6750", required = true)
@@ -65,10 +63,7 @@ public interface AccountAccessConsentsApi {
 
 	@Operation(summary = "Get Account Access Consents", operationId = "getAccountAccessConsentsConsentId", description = "", tags = { "Account Access", })
 
-	@RequestMapping(
-			value = "/account-access-consents/{ConsentId}",
-			produces = { "application/json; charset=utf-8", "application/json", "application/jose+jwe" },
-			method = RequestMethod.GET)
+	@GetMapping(value = "/account-access-consents/{ConsentId}", produces = { "application/json; charset=utf-8", "application/json", "application/jose+jwe" })
 	default ResponseEntity<OBReadConsentResponse1> getAccountAccessConsentsConsentId(@Parameter(name = "ConsentId", required = true)
 	@PathVariable("ConsentId")
 	String consentId, @Parameter(name = "An Authorisation Token as per https://tools.ietf.org/html/rfc6750", required = true)

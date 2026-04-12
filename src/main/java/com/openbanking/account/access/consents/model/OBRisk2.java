@@ -1,6 +1,7 @@
 package com.openbanking.account.access.consents.model;
 
 import io.swagger.v3.oas.annotations.media.Schema;
+import java.io.Serial;
 import java.io.Serializable;
 import lombok.Getter;
 import lombok.Setter;
@@ -15,6 +16,7 @@ import lombok.Setter;
 @Getter
 @Setter
 public class OBRisk2 implements Serializable {
+	@Serial
 	private static final long serialVersionUID = 1L;
 
 }
