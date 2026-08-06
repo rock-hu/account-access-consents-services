@@ -9,4 +9,4 @@ on:
     types: [opened, synchronize, reopened]
 jobs:
   call-workflow:
-    uses: rock-hu/workflows/.github/workflows/maven-deploy.yaml
+    uses: rock-hu/workflows/.github/workflows/maven-deploy.yaml@master
