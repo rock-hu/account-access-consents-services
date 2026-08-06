@@ -1,0 +1,12 @@
+name: maven-package
+on:
+  push:
+    branches:
+      - master
+      - develop
+      - "releases/**"
+  pull_request:
+    types: [opened, synchronize, reopened]
+jobs:
+  call-workflow:
+    uses: rock-hu/workflows/.github/workflows/maven-package.yaml
