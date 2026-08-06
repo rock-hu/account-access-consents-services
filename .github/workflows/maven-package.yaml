@@ -8,5 +8,5 @@ on:
   pull_request:
     types: [opened, synchronize, reopened]
 jobs:
-  call-workflow:
+  mvn-package:
     uses: rock-hu/workflows/.github/workflows/maven-package.yaml@master

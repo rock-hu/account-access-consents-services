@@ -8,5 +8,6 @@ on:
   pull_request:
     types: [opened, synchronize, reopened]
 jobs:
-  call-workflow:
+  mvn-deploy:
     uses: rock-hu/workflows/.github/workflows/maven-deploy.yaml@master
+    # rock-hu/workflows/.github/workflows/maven-deploy.yaml
