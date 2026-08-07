@@ -1,8 +1,7 @@
 spring:
   application:
     name: account-access-consents-services
-  profiles:
-    active: "dev"
+
   jmx:
     enabled: false
 
@@ -52,9 +51,9 @@ springdoc:
   show-actuator: false
   
 artifact:
-  groupId: '@project.groupId@'
-  artifactId: '@project.artifactId@'
-  version: '@project.version@'  
+  groupId: "@project.groupId@"
+  artifactId: "@project.artifactId@"
+  version: "@project.version@"  
 sentry:
   dsn: ${SENTRY_DSN_ACCOUNT_ACCESS_CONSENTS_SERVICES}
   send-default-pii: true    
