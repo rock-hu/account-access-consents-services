@@ -9,12 +9,10 @@ import lombok.Setter;
 /**
  * Links relevant to the payload
  */
-
 @Schema(description = "Links relevant to the payload")
 @Getter
 @Setter
 public class Links implements Serializable {
-	@Serial
-	private static final long serialVersionUID = 1L;
-
+    @Serial
+    private static final long serialVersionUID = 1L;
 }

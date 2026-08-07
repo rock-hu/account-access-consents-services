@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
 @Setter
 @ConfigurationProperties(prefix = "artifact")
 public class Artifact implements Serializable {
-	private String groupId;
-	private String artifactId;
-	private String version;
+    private String groupId;
+    private String artifactId;
+    private String version;
 }

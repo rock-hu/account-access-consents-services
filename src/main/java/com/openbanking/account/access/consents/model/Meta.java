@@ -9,12 +9,10 @@ import lombok.Setter;
 /**
  * Meta Data relevant to the payload
  */
-
 @Schema(description = "Meta Data relevant to the payload")
 @Getter
 @Setter
 public class Meta implements Serializable {
-	@Serial
-	private static final long serialVersionUID = 1L;
-
+    @Serial
+    private static final long serialVersionUID = 1L;
 }

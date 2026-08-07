@@ -9,12 +9,10 @@ import lombok.Setter;
 /**
  * An array of detail error codes, and messages, and URLs to documentation to help remediation.
  */
-
 @Schema(description = "An array of detail error codes, and messages, and URLs to documentation to help remediation.")
 @Getter
 @Setter
 public class OBErrorResponse1 implements Serializable {
-	@Serial
-	private static final long serialVersionUID = 1L;
-
+    @Serial
+    private static final long serialVersionUID = 1L;
 }

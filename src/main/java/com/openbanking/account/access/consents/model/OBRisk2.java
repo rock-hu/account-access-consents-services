@@ -10,13 +10,12 @@ import lombok.Setter;
  * The Risk section is sent by the initiating party to the ASPSP. It is used to specify additional details for risk
  * scoring for Account Info.
  */
-
 @Schema(
-		description = "The Risk section is sent by the initiating party to the ASPSP. It is used to specify additional details for risk scoring for Account Info.")
+        description =
+                "The Risk section is sent by the initiating party to the ASPSP. It is used to specify additional details for risk scoring for Account Info.")
 @Getter
 @Setter
 public class OBRisk2 implements Serializable {
-	@Serial
-	private static final long serialVersionUID = 1L;
-
+    @Serial
+    private static final long serialVersionUID = 1L;
 }

@@ -11,75 +11,74 @@ import lombok.Setter;
 @Getter
 @Setter
 public class OBReadConsent1Data implements Serializable {
-	@Serial
-	private static final long serialVersionUID = 1L;
+    @Serial
+    private static final long serialVersionUID = 1L;
 
-	/**
-	 * Specifies the Open Banking account access data types. This is a list of the data clusters being consented by the PSU,
-	 * and requested for authorisation with the ASPSP.
-	 */
-	public enum PermissionsEnum {
-		READACCOUNTSBASIC("ReadAccountsBasic"),
+    /**
+     * Specifies the Open Banking account access data types. This is a list of the data clusters being consented by the PSU,
+     * and requested for authorisation with the ASPSP.
+     */
+    public enum PermissionsEnum {
+        READACCOUNTSBASIC("ReadAccountsBasic"),
 
-		READACCOUNTSDETAIL("ReadAccountsDetail"),
+        READACCOUNTSDETAIL("ReadAccountsDetail"),
 
-		READBALANCES("ReadBalances"),
+        READBALANCES("ReadBalances"),
 
-		READBENEFICIARIESBASIC("ReadBeneficiariesBasic"),
+        READBENEFICIARIESBASIC("ReadBeneficiariesBasic"),
 
-		READBENEFICIARIESDETAIL("ReadBeneficiariesDetail"),
+        READBENEFICIARIESDETAIL("ReadBeneficiariesDetail"),
 
-		READDIRECTDEBITS("ReadDirectDebits"),
+        READDIRECTDEBITS("ReadDirectDebits"),
 
-		READOFFERS("ReadOffers"),
+        READOFFERS("ReadOffers"),
 
-		READPAN("ReadPAN"),
+        READPAN("ReadPAN"),
 
-		READPARTY("ReadParty"),
+        READPARTY("ReadParty"),
 
-		READPARTYPSU("ReadPartyPSU"),
+        READPARTYPSU("ReadPartyPSU"),
 
-		READPRODUCTS("ReadProducts"),
+        READPRODUCTS("ReadProducts"),
 
-		READSCHEDULEDPAYMENTSBASIC("ReadScheduledPaymentsBasic"),
+        READSCHEDULEDPAYMENTSBASIC("ReadScheduledPaymentsBasic"),
 
-		READSCHEDULEDPAYMENTSDETAIL("ReadScheduledPaymentsDetail"),
+        READSCHEDULEDPAYMENTSDETAIL("ReadScheduledPaymentsDetail"),
 
-		READSTANDINGORDERSBASIC("ReadStandingOrdersBasic"),
+        READSTANDINGORDERSBASIC("ReadStandingOrdersBasic"),
 
-		READSTANDINGORDERSDETAIL("ReadStandingOrdersDetail"),
+        READSTANDINGORDERSDETAIL("ReadStandingOrdersDetail"),
 
-		READSTATEMENTSBASIC("ReadStatementsBasic"),
+        READSTATEMENTSBASIC("ReadStatementsBasic"),
 
-		READSTATEMENTSDETAIL("ReadStatementsDetail"),
+        READSTATEMENTSDETAIL("ReadStatementsDetail"),
 
-		READTRANSACTIONSBASIC("ReadTransactionsBasic"),
+        READTRANSACTIONSBASIC("ReadTransactionsBasic"),
 
-		READTRANSACTIONSCREDITS("ReadTransactionsCredits"),
+        READTRANSACTIONSCREDITS("ReadTransactionsCredits"),
 
-		READTRANSACTIONSDEBITS("ReadTransactionsDebits"),
+        READTRANSACTIONSDEBITS("ReadTransactionsDebits"),
 
-		READTRANSACTIONSDETAIL("ReadTransactionsDetail");
+        READTRANSACTIONSDETAIL("ReadTransactionsDetail");
 
-		private String value;
+        private String value;
 
-		PermissionsEnum(String value) {
-			this.value = value;
-		}
+        PermissionsEnum(String value) {
+            this.value = value;
+        }
 
-		@Override
-		public String toString() {
-			return value;
-		}
+        @Override
+        public String toString() {
+            return value;
+        }
 
-		public static PermissionsEnum fromValue(String text) {
-			for (PermissionsEnum b : PermissionsEnum.values()) {
-				if (String.valueOf(b.value).equals(text)) {
-					return b;
-				}
-			}
-			return null;
-		}
-	}
-
+        public static PermissionsEnum fromValue(String text) {
+            for (PermissionsEnum b : PermissionsEnum.values()) {
+                if (String.valueOf(b.value).equals(text)) {
+                    return b;
+                }
+            }
+            return null;
+        }
+    }
 }

@@ -19,66 +19,100 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("")
 public interface AccountAccessConsentsApi {
 
-	@Operation(summary = "Create Account Access Consents", operationId = "createAccountAccessConsents", description = "", tags = { "Account Access", })
-	@PostMapping(
-			value = "/account-access-consents",
-			produces = { "application/json; charset=utf-8", "application/json", "application/jose+jwe" },
-			consumes = { "application/json; charset=utf-8", "application/json", "application/jose+jwe" })
-	default ResponseEntity<OBReadConsentResponse1> createAccountAccessConsents(@Parameter(name = "Default", required = true)
-	@RequestBody
-	OBReadConsent1 body, @Parameter(name = "An Authorisation Token as per https://tools.ietf.org/html/rfc6750", required = true)
-	@RequestHeader(value = "Authorization", required = true)
-	String authorization, @Parameter(
-			name = "The time when the PSU last logged in with the TPP.  All dates in the HTTP headers are represented as RFC 7231 Full Dates. An example is below:  Sun, 10 Sep 2017 19:43:31 UTC")
-	@RequestHeader(value = "x-fapi-auth-date", required = false)
-	String xFapiAuthDate, @Parameter(name = "The PSU's IP address if the PSU is currently logged in with the TPP.")
-	@RequestHeader(value = "x-fapi-customer-ip-address", required = false)
-	String xFapiCustomerIpAddress, @Parameter(name = "An RFC4122 UID used as a correlation id.")
-	@RequestHeader(value = "x-fapi-interaction-id", required = false)
-	String xFapiInteractionId, @Parameter(name = "Indicates the user-agent that the PSU is using.")
-	@RequestHeader(value = "x-customer-user-agent", required = false)
-	String xCustomerUserAgent) {
-		return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
-	}
+    @Operation(
+            summary = "Create Account Access Consents",
+            operationId = "createAccountAccessConsents",
+            description = "",
+            tags = {
+                "Account Access",
+            })
+    @PostMapping(
+            value = "/account-access-consents",
+            produces = {"application/json; charset=utf-8", "application/json", "application/jose+jwe"},
+            consumes = {"application/json; charset=utf-8", "application/json", "application/jose+jwe"})
+    default ResponseEntity<OBReadConsentResponse1> createAccountAccessConsents(
+            @Parameter(name = "Default", required = true) @RequestBody OBReadConsent1 body,
+            @Parameter(name = "An Authorisation Token as per https://tools.ietf.org/html/rfc6750", required = true)
+                    @RequestHeader(value = "Authorization", required = true)
+                    String authorization,
+            @Parameter(
+                            name =
+                                    "The time when the PSU last logged in with the TPP.  All dates in the HTTP headers are represented as RFC 7231 Full Dates. An example is below:  Sun, 10 Sep 2017 19:43:31 UTC")
+                    @RequestHeader(value = "x-fapi-auth-date", required = false)
+                    String xFapiAuthDate,
+            @Parameter(name = "The PSU's IP address if the PSU is currently logged in with the TPP.")
+                    @RequestHeader(value = "x-fapi-customer-ip-address", required = false)
+                    String xFapiCustomerIpAddress,
+            @Parameter(name = "An RFC4122 UID used as a correlation id.")
+                    @RequestHeader(value = "x-fapi-interaction-id", required = false)
+                    String xFapiInteractionId,
+            @Parameter(name = "Indicates the user-agent that the PSU is using.")
+                    @RequestHeader(value = "x-customer-user-agent", required = false)
+                    String xCustomerUserAgent) {
+        return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
+    }
 
-	@Operation(summary = "Delete Account Access Consents", operationId = "deleteAccountAccessConsentsConsentId", description = "", tags = { "Account Access", })
+    @Operation(
+            summary = "Delete Account Access Consents",
+            operationId = "deleteAccountAccessConsentsConsentId",
+            description = "",
+            tags = {
+                "Account Access",
+            })
+    @DeleteMapping(
+            value = "/account-access-consents/{ConsentId}",
+            produces = {"application/json; charset=utf-8", "application/json", "application/jose+jwe"})
+    default ResponseEntity<Void> deleteAccountAccessConsentsConsentId(
+            @Parameter(name = "ConsentId", required = true) @PathVariable("ConsentId") String consentId,
+            @Parameter(name = "An Authorisation Token as per https://tools.ietf.org/html/rfc6750", required = true)
+                    @RequestHeader(value = "Authorization", required = true)
+                    String authorization,
+            @Parameter(
+                            name =
+                                    "The time when the PSU last logged in with the TPP.  All dates in the HTTP headers are represented as RFC 7231 Full Dates. An example is below:  Sun, 10 Sep 2017 19:43:31 UTC")
+                    @RequestHeader(value = "x-fapi-auth-date", required = false)
+                    String xFapiAuthDate,
+            @Parameter(name = "The PSU's IP address if the PSU is currently logged in with the TPP.")
+                    @RequestHeader(value = "x-fapi-customer-ip-address", required = false)
+                    String xFapiCustomerIpAddress,
+            @Parameter(name = "An RFC4122 UID used as a correlation id.")
+                    @RequestHeader(value = "x-fapi-interaction-id", required = false)
+                    String xFapiInteractionId,
+            @Parameter(name = "Indicates the user-agent that the PSU is using.")
+                    @RequestHeader(value = "x-customer-user-agent", required = false)
+                    String xCustomerUserAgent) {
+        return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
+    }
 
-	@DeleteMapping(value = "/account-access-consents/{ConsentId}", produces = { "application/json; charset=utf-8", "application/json", "application/jose+jwe" })
-	default ResponseEntity<Void> deleteAccountAccessConsentsConsentId(@Parameter(name = "ConsentId", required = true)
-	@PathVariable("ConsentId")
-	String consentId, @Parameter(name = "An Authorisation Token as per https://tools.ietf.org/html/rfc6750", required = true)
-	@RequestHeader(value = "Authorization", required = true)
-	String authorization, @Parameter(
-			name = "The time when the PSU last logged in with the TPP.  All dates in the HTTP headers are represented as RFC 7231 Full Dates. An example is below:  Sun, 10 Sep 2017 19:43:31 UTC")
-	@RequestHeader(value = "x-fapi-auth-date", required = false)
-	String xFapiAuthDate, @Parameter(name = "The PSU's IP address if the PSU is currently logged in with the TPP.")
-	@RequestHeader(value = "x-fapi-customer-ip-address", required = false)
-	String xFapiCustomerIpAddress, @Parameter(name = "An RFC4122 UID used as a correlation id.")
-	@RequestHeader(value = "x-fapi-interaction-id", required = false)
-	String xFapiInteractionId, @Parameter(name = "Indicates the user-agent that the PSU is using.")
-	@RequestHeader(value = "x-customer-user-agent", required = false)
-	String xCustomerUserAgent) {
-		return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
-	}
-
-	@Operation(summary = "Get Account Access Consents", operationId = "getAccountAccessConsentsConsentId", description = "", tags = { "Account Access", })
-
-	@GetMapping(value = "/account-access-consents/{ConsentId}", produces = { "application/json; charset=utf-8", "application/json", "application/jose+jwe" })
-	default ResponseEntity<OBReadConsentResponse1> getAccountAccessConsentsConsentId(@Parameter(name = "ConsentId", required = true)
-	@PathVariable("ConsentId")
-	String consentId, @Parameter(name = "An Authorisation Token as per https://tools.ietf.org/html/rfc6750", required = true)
-	@RequestHeader(value = "Authorization", required = true)
-	String authorization, @Parameter(
-			name = "The time when the PSU last logged in with the TPP.  All dates in the HTTP headers are represented as RFC 7231 Full Dates. An example is below:  Sun, 10 Sep 2017 19:43:31 UTC")
-	@RequestHeader(value = "x-fapi-auth-date", required = false)
-	String xFapiAuthDate, @Parameter(name = "The PSU's IP address if the PSU is currently logged in with the TPP.")
-	@RequestHeader(value = "x-fapi-customer-ip-address", required = false)
-	String xFapiCustomerIpAddress, @Parameter(name = "An RFC4122 UID used as a correlation id.")
-	@RequestHeader(value = "x-fapi-interaction-id", required = false)
-	String xFapiInteractionId, @Parameter(name = "Indicates the user-agent that the PSU is using.")
-	@RequestHeader(value = "x-customer-user-agent", required = false)
-	String xCustomerUserAgent) {
-		return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
-	}
-
+    @Operation(
+            summary = "Get Account Access Consents",
+            operationId = "getAccountAccessConsentsConsentId",
+            description = "",
+            tags = {
+                "Account Access",
+            })
+    @GetMapping(
+            value = "/account-access-consents/{ConsentId}",
+            produces = {"application/json; charset=utf-8", "application/json", "application/jose+jwe"})
+    default ResponseEntity<OBReadConsentResponse1> getAccountAccessConsentsConsentId(
+            @Parameter(name = "ConsentId", required = true) @PathVariable("ConsentId") String consentId,
+            @Parameter(name = "An Authorisation Token as per https://tools.ietf.org/html/rfc6750", required = true)
+                    @RequestHeader(value = "Authorization", required = true)
+                    String authorization,
+            @Parameter(
+                            name =
+                                    "The time when the PSU last logged in with the TPP.  All dates in the HTTP headers are represented as RFC 7231 Full Dates. An example is below:  Sun, 10 Sep 2017 19:43:31 UTC")
+                    @RequestHeader(value = "x-fapi-auth-date", required = false)
+                    String xFapiAuthDate,
+            @Parameter(name = "The PSU's IP address if the PSU is currently logged in with the TPP.")
+                    @RequestHeader(value = "x-fapi-customer-ip-address", required = false)
+                    String xFapiCustomerIpAddress,
+            @Parameter(name = "An RFC4122 UID used as a correlation id.")
+                    @RequestHeader(value = "x-fapi-interaction-id", required = false)
+                    String xFapiInteractionId,
+            @Parameter(name = "Indicates the user-agent that the PSU is using.")
+                    @RequestHeader(value = "x-customer-user-agent", required = false)
+                    String xCustomerUserAgent) {
+        return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
+    }
 }
